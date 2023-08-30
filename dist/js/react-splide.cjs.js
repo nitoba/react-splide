@@ -2702,14 +2702,16 @@ function merge2(object, source) {
 
 // src/js/components/SplideTrack/SplideTrack.tsx
 var import_react = __toESM(require("react"));
-var SplideTrack = ({ children: children2, className, ...props }) => {
+var SplideTrack = (0, import_react.forwardRef)(({ children: children2, className, ...props }, ref) => {
   return /* @__PURE__ */ import_react.default.createElement("div", {
+    ref,
     className: classNames("splide__track", className),
     ...props
   }, /* @__PURE__ */ import_react.default.createElement("ul", {
     className: "splide__list"
   }, children2));
-};
+});
+SplideTrack.displayName = "SplideTrack";
 
 // src/js/components/Splide/Splide.tsx
 var Splide2 = class extends import_react2.default.Component {

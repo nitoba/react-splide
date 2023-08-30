@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentProps, forwardRef } from 'react';
 import { classNames } from '../../utils';
 
 
@@ -7,12 +7,17 @@ import { classNames } from '../../utils';
  *
  * @since 0.7.0
  */
-export const SplideTrack: React.FC<JSX.IntrinsicElements[ 'div' ]> = ( { children, className, ...props } ) => {
+
+type Props = ComponentProps<'div'>
+export const SplideTrack = forwardRef<any, Props>( ( { children, className, ...props }, ref ) => {
   return (
-    <div className={ classNames( 'splide__track', className ) } { ...props }>
+    <div ref={ref} className={ classNames( 'splide__track', className ) } { ...props }>
       <ul className="splide__list">
         { children }
       </ul>
     </div>
   );
-};
+} );
+
+SplideTrack.displayName = "SplideTrack";
+

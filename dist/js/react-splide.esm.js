@@ -2667,15 +2667,17 @@ function merge2(object, source) {
 }
 
 // src/js/components/SplideTrack/SplideTrack.tsx
-import React from "react";
-var SplideTrack = ({ children: children2, className, ...props }) => {
+import React, { forwardRef } from "react";
+var SplideTrack = forwardRef(({ children: children2, className, ...props }, ref) => {
   return /* @__PURE__ */ React.createElement("div", {
+    ref,
     className: classNames("splide__track", className),
     ...props
   }, /* @__PURE__ */ React.createElement("ul", {
     className: "splide__list"
   }, children2));
-};
+});
+SplideTrack.displayName = "SplideTrack";
 
 // src/js/components/Splide/Splide.tsx
 var Splide2 = class extends React2.Component {
