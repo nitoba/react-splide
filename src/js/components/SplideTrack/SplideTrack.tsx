@@ -9,7 +9,7 @@ import { classNames } from '../../utils';
  */
 
 type Props = ComponentProps<'div'>
-export const SplideTrack = forwardRef<any, Props>( ( { children, className, ...props }, ref ) => {
+export const SplideTrack = forwardRef<HTMLDivElement, Props>( ( { children, className, ...props }, ref ) => {
   return (
     <div ref={ref} className={ classNames( 'splide__track', className ) } { ...props }>
       <ul className="splide__list">
